@@ -24,5 +24,5 @@ def translator(phrase: str, language: str):
 
 
 def text_generator(phrase: str):
-    return get_answer(f"Convert the following bullet points into a report. Focus on the facts and only give information that is actually included in the bullet points. The report is technical, so there should be no sentiments. Bullet points: {phrase}")
+    return get_answer(f"Convert the following text or bullet points into a report. Focus on the facts and only give information that is actually included in the text. The report is technical, so there should be no sentiments. There should not be a conclusion. Text: {phrase}")
 
