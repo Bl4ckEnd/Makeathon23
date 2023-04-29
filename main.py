@@ -2,6 +2,7 @@ import streamlit as st
 from inputs import english_inputs, spanish_inputs, german_inputs
 from pdf_creation import create_pdf
 from utils import translator, text_generator
+from latex_file import create_latex_pdf
 
 # Create language selection dropdown
 language = st.selectbox("Select a language", ["English", "Spanish", "German"])
@@ -33,7 +34,7 @@ if submit:
     inputs["process"] = text_generator(inputs["process"])
 
     # Create a pdf file from the data
-    create_pdf(**inputs)
+    create_latex_pdf(**inputs)
 
     # Display a success message
     st.write("Your report has been created successfully.")

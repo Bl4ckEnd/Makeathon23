@@ -1,26 +1,28 @@
 from pylatex import Document, Section, Subsection, Command
 from pylatex.utils import italic, NoEscape
 
-# Create a new document
-doc = Document()
+from pylatex import Document, Section, Itemize, Subsection
 
-# Add a title
-doc.preamble.append(Command('title', 'My LaTeX Document'))
-doc.preamble.append(Command('author', 'John Doe'))
-doc.preamble.append(Command('date', NoEscape(r'\today')))
-doc.append(Command('maketitle'))
+def create_latex_pdf(name, date, location, equipment, task, process):
 
-# Add a section
-with doc.create(Section('Section Title')):
-    # Add a subsection
-    with doc.create(Subsection('Subsection Title')):
-        doc.append('Some text here.')
+    # Create document
+    doc = Document()
 
-    # Add some italicized text
-    doc.append(italic('Some italicized text.'))
+    # Add title and author
+    doc.append(r"Technical Report")
+    # use name as author
+    doc.append(r"Technician: " + name)
+    # use date as date
+    doc.append(r"Date: " + str(date))
 
-# Add a custom command
-doc.append(Command('mycommand', 'Some custom command.'))
+    # Add sections
+    with doc.create(Subsection('Equipment')):
+        doc.append(equipment)
 
-# Generate the PDF
-doc.generate_pdf('documents/my_document', clean=True, clean_tex=True, silent=True, compiler='latexmk')
+    with doc.create(Subsection('Task')):
+        doc.append(task)
+
+    with doc.create(Subsection('Process')):
+        doc.append(process)
+    # Generate pdf
+    doc.generate_pdf('documents/report', clean_tex=True, clean=True)

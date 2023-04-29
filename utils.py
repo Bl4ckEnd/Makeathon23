@@ -1,5 +1,10 @@
 import openai
-openai.api_key = "API-KEY"
+import yaml
+
+# read api key from keys.yaml
+with open("keys.yaml", "r") as f:
+    keys = yaml.load(f, Loader=yaml.FullLoader)
+    openai.api_key = keys["key"]
 
 
 def get_answer(phrase: str):
@@ -19,5 +24,5 @@ def translator(phrase: str, language: str):
 
 
 def text_generator(phrase: str):
-    return get_answer(f"Convert the following bullet points into a report: {phrase}")
+    return get_answer(f"Convert the following bullet points into a report. Focus on the facts and only give information that is actually included in the bullet points. The report is technical, so there should be no sentiments. Bullet points: {phrase}")
 

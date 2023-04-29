@@ -12,7 +12,7 @@ def english_inputs():
     location = st.text_input("Location")
     equipment = st.text_input("Equipment")
     task = st.text_input("Task")
-    process = st.text_input("Process (please describe every day individually)")
+    process = st.text_area("Process (please describe every day individually)")
     return {"name": name, "date": date, "location": location, "equipment": equipment, "task": task, "process": process}
 
 # spanish
@@ -26,7 +26,7 @@ def spanish_inputs():
     location = st.text_input("Ubicación")
     equipment = st.text_input("Equipo")
     task = st.text_input("Tarea")
-    process = st.text_input("Proceso (por favor describa cada día individualmente)")
+    process = st.text_area("Proceso (por favor describa cada día individualmente)")
     return {"name": name, "date": date, "location": location, "equipment": equipment, "task": task, "process": process}
 
 # german
@@ -40,5 +40,5 @@ def german_inputs():
     location = st.text_input("Ort")
     equipment = st.text_input("Ausrüstung")
     task = st.text_input("Aufgabe")
-    process = st.text_input("Prozess (Bitte beschreiben Sie jeden Tag einzeln)")
+    process = st.text_area("Prozess (Bitte beschreiben Sie jeden Tag einzeln)")
     return {"name": name, "date": date, "location": location, "equipment": equipment, "task": task, "process": process}
