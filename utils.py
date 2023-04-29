@@ -17,6 +17,7 @@ def translator(phrase: str, language: str):
     else:
         raise ValueError("Language not supported")
 
+
 def text_generator(phrase: str):
     return get_answer(f"Convert the following bullet points into a report: {phrase}")
 

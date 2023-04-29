@@ -24,7 +24,9 @@ submit = st.button("Submit")
 
 if submit:
 
-    # translate process text
+    # translate equipment, task, and process
+    inputs["equipment"] = translator(inputs["equipment"], language)
+    inputs["task"] = translator(inputs["task"], language)
     inputs["process"] = translator(inputs["process"], language)
 
     # generate report text
