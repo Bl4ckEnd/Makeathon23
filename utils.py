@@ -1,5 +1,5 @@
 import openai
-openai.api_key = "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"
+openai.api_key = "API-KEY"
 
 
 def get_answer(phrase: str):
