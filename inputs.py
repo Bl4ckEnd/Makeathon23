@@ -1,5 +1,4 @@
 import streamlit as st
-import openai
 
 
 # create input fields for every language
