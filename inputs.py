@@ -1,0 +1,44 @@
+import streamlit as st
+
+# create input fields for every language
+# english
+def english_inputs():
+    st.title("Reporting Tool")
+    st.write("This tool automates the process of creating reports for clients.")
+    st.subheader("Data Input")
+    st.write("Please document your work:")
+    name = st.text_input("Name")
+    date = st.date_input("Date of Report")
+    location = st.text_input("Location")
+    equipment = st.text_input("Equipment")
+    task = st.text_input("Task")
+    process = st.text_input("Process (please describe every day individually)")
+    return {"name": name, "date": date, "location": location, "equipment": equipment, "task": task, "process": process}
+
+# spanish
+def spanish_inputs():
+    st.title("Herramienta de reporte")
+    st.write("Esta herramienta automatiza el proceso de crear reportes para clientes.")
+    st.subheader("Entrada de datos")
+    st.write("Por favor documente su trabajo:")
+    name = st.text_input("Nombre")
+    date = st.date_input("Fecha de reporte")
+    location = st.text_input("Ubicación")
+    equipment = st.text_input("Equipo")
+    task = st.text_input("Tarea")
+    process = st.text_input("Proceso (por favor describa cada día individualmente)")
+    return {"name": name, "date": date, "location": location, "equipment": equipment, "task": task, "process": process}
+
+# german
+def german_inputs():
+    st.title("Berichterstellungstool")
+    st.write("Dieses Tool automatisiert den Prozess der Erstellung von Berichten für Kunden.")
+    st.subheader("Dateneingabe")
+    st.write("Bitte dokumentieren Sie Ihre Arbeit:")
+    name = st.text_input("Name")
+    date = st.date_input("Datum des Berichts")
+    location = st.text_input("Ort")
+    equipment = st.text_input("Ausrüstung")
+    task = st.text_input("Aufgabe")
+    process = st.text_input("Prozess (Bitte beschreiben Sie jeden Tag einzeln)")
+    return {"name": name, "date": date, "location": location, "equipment": equipment, "task": task, "process": process}
