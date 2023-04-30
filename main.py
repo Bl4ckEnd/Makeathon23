@@ -2,7 +2,6 @@ import streamlit as st
 from inputs import english_inputs, spanish_inputs, german_inputs
 from utils import translator, text_generator
 from latex_file import create_latex_pdf
-from latex_file import create_latex_pdf2
 import yaml
 import openai
 
