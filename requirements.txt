@@ -1,0 +1,4 @@
+openai
+pylatex
+pyyaml
+streamlit
